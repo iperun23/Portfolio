@@ -132,7 +132,7 @@ const TempusUnlimited = () => {
 	);
 
 	const mobileVideoElementBefore = (
-		<video className="w-full" ref={videoRef1}>
+		<video className="w-full" autoPlay muted playsInline ref={videoRef1}>
 			<source src={beforeVideoURL} />
 		</video>
 	);
@@ -144,7 +144,7 @@ const TempusUnlimited = () => {
 	);
 
 	const mobileVideoElementAfter = (
-		<video className="w-full" ref={videoRef2}>
+		<video className="w-full" autoPlay muted playsInline ref={videoRef2}>
 			<source src={afterVideoURL} />
 		</video>
 	);

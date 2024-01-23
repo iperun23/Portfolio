@@ -89,7 +89,7 @@ const LuxeSeasons = () => {
 	);
 
 	const mobileVideoElement = (
-		<video className="w-full" ref={videoRef}>
+		<video className="w-full" autoPlay muted playsInline ref={videoRef}>
 			<source src={videoURL} />
 		</video>
 	);
