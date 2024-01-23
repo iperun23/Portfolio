@@ -4,7 +4,6 @@ const nextConfig = {
 	swcMinify: true,
 	basePath: "/portfolio",
 	assetPrefix: "/portfolio/",
-	output: "export",
 	webpack(config) {
 		config.module.rules.push({
 			test: /\.svg$/,
