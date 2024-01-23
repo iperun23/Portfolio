@@ -6,7 +6,7 @@ import { fadeIn } from "../../variants";
 
 const Contact = () => {
 	return (
-		<div className="h-full bg-primary/80 py-24 lg:py36 flex items-center justify-center">
+		<div className="h-full bg-primary/60 pb-24 lg:py36 flex items-center justify-center">
 			<Circles />
 			<CirclesLeft />
 			<div className=" container mx-auto">

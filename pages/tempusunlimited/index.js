@@ -164,7 +164,7 @@ const TempusUnlimited = () => {
 	);
 
 	return (
-		<div className="h-full bg-primary/80 lg:pt-36 lg:pb-36 pt-12 flex items-center">
+		<div className="h-full bg-primary/60 lg:pt-36 lg:pb-36 pt-12 flex items-center">
 			<Circles />
 			<CirclesLeft />
 			<div className=" container mx-auto">
