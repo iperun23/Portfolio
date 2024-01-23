@@ -2,9 +2,9 @@
 const nextConfig = {
 	reactStrictMode: true,
 	swcMinify: true,
-	basePath: "/portfolio",
-	assetPrefix: "/portfolio/",
-	output: "export",
+	// basePath: "/portfolio",
+	// assetPrefix: "/portfolio/",
+	// output: "export",
 	webpack(config) {
 		config.module.rules.push({
 			test: /\.svg$/,

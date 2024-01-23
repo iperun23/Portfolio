@@ -151,7 +151,7 @@ const TempusUnlimited = () => {
 								</div>
 								<video className="w-full" autoPlay ref={videoRef1}>
 									<source
-										src={"/portfolio/before-vid.mp4" && "/before-vid.mp4"}
+										src={"/portfolio/before-vid.mp4" || "/before-vid.mp4"}
 									/>
 								</video>
 								<div className="absolute bottom-4 right-5 z-10">
