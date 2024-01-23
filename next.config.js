@@ -4,20 +4,13 @@ const nextConfig = {
 	swcMinify: true,
 	basePath: "/portfolio",
 	assetPrefix: "/portfolio/",
+	output: "export",
 	webpack(config) {
 		config.module.rules.push({
 			test: /\.svg$/,
 			use: [{ loader: "@svgr/webpack", options: { icon: true } }],
 		});
 		return config;
-	},
-	async exportPathMap() {
-		return {
-			"/": { page: "/" },
-			"/contact": { page: "/contact" },
-			"/luxeseasons": { page: "/luxeseasons" },
-			"/tempusunlimited": { page: "/tempusunlimited" },
-		};
 	},
 };
 
