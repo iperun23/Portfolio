@@ -5,8 +5,8 @@ const Avatar = () => {
 	const isDevelopment = process.env.NODE_ENV === "development";
 
 	// Define URLs based on the environment
-	let firstURL = isDevelopment ? "/avatar3.png" : "/portfolio/avatar3.png";
-	let secondURL = "/avatar3.png";
+	let firstURL = isDevelopment ? "/avatar.png" : "/portfolio/avatar.png";
+	let secondURL = "/avatar.png";
 	return (
 		<div className="hidden xl:flex xl:max-w-none">
 			<Image
