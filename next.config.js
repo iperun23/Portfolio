@@ -11,6 +11,14 @@ const nextConfig = {
 		});
 		return config;
 	},
+	async exportPathMap() {
+		return {
+			"/": { page: "/" },
+			"/contact": { page: "/contact" },
+			"/luxeseasons": { page: "/luxeseasons" },
+			"/tempusunlimited": { page: "/tempusunlimited" },
+		};
+	},
 };
 
 module.exports = nextConfig;
