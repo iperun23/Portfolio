@@ -150,7 +150,9 @@ const TempusUnlimited = () => {
 									/>
 								</div>
 								<video className="w-full" autoPlay ref={videoRef1}>
-									<source src="/portfolio//before-vid.mp4" />
+									<source
+										src={"/portfolio/before-vid.mp4" || "/before-vid.mp4"}
+									/>
 								</video>
 								<div className="absolute bottom-4 right-5 z-10">
 									<FullScreenSVG
@@ -172,7 +174,9 @@ const TempusUnlimited = () => {
 									/>
 								</div>
 								<video className="w-full" autoPlay ref={videoRef2}>
-									<source src="/portfolio//after-vid.mp4" />
+									<source
+										src={"/portfolio/after-vid.mp4" || "/after-vid.mp4"}
+									/>
 								</video>
 								<div className="absolute bottom-4 right-5 z-10">
 									<FullScreenSVG
