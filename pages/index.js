@@ -11,7 +11,7 @@ import Link from "next/link";
 
 const Home = () => {
 	return (
-		<div className="bg-primary/60 h-full">
+		<div className="bg-primary/80 h-full">
 			<CirclesLeft />
 			{/* {text} */}
 			<div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10 pb-48 lg:pb-1">
