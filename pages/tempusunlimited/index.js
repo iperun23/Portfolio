@@ -132,7 +132,14 @@ const TempusUnlimited = () => {
 	);
 
 	const mobileVideoElementBefore = (
-		<video className="w-full" autoPlay muted playsInline ref={videoRef1}>
+		<video
+			className="w-full"
+			autoPlay
+			muted
+			playsInline
+			controls
+			ref={videoRef1}
+		>
 			<source src={beforeVideoURL} />
 		</video>
 	);
@@ -144,13 +151,20 @@ const TempusUnlimited = () => {
 	);
 
 	const mobileVideoElementAfter = (
-		<video className="w-full" autoPlay muted playsInline ref={videoRef2}>
+		<video
+			className="w-full"
+			autoPlay
+			muted
+			playsInline
+			controls
+			ref={videoRef2}
+		>
 			<source src={afterVideoURL} />
 		</video>
 	);
 
 	return (
-		<div className="h-full bg-primary/60 lg:pt-36 lg:pb-36 pb-36 flex items-center">
+		<div className="h-full bg-primary/60 lg:pt-36 lg:pb-36 pb-12 flex items-center">
 			<Circles />
 			<CirclesLeft />
 			<div className=" container mx-auto">

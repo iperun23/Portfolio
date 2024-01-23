@@ -89,13 +89,20 @@ const LuxeSeasons = () => {
 	);
 
 	const mobileVideoElement = (
-		<video className="w-full" autoPlay muted playsInline ref={videoRef}>
+		<video
+			className="w-full"
+			autoPlay
+			muted
+			playsInline
+			controls
+			ref={videoRef}
+		>
 			<source src={videoURL} />
 		</video>
 	);
 
 	return (
-		<div className="h-full bg-primary/60 lg:pt-36 lg:pb-36 flex items-center pb-36">
+		<div className="h-full bg-primary/60 lg:pt-36 lg:pb-36 flex items-center pb-12">
 			<Circles />
 			<CirclesLeft />
 			<div className=" container mx-auto">
