@@ -52,6 +52,14 @@ const LuxeSeasons = () => {
 		}
 	};
 
+	// Use Next.js environment variable to check if it's in development
+	const isDevelopment = process.env.NODE_ENV === "development";
+
+	// Define video URLs based on the environment
+	const videoURL = isDevelopment
+		? "/luxeseasonsvid.mp4"
+		: "/portfolio/luxeseasonsvid.mp4";
+
 	return (
 		<div className="h-full bg-primary/60 py-36 flex items-center">
 			<Circles />
@@ -97,18 +105,16 @@ const LuxeSeasons = () => {
 						exit="hidden"
 						className="relative w-[90%] max-w-6xl my-8 rounded-xl overflow-hidden custom-box-shadow"
 					>
-						<div className="absolute top-4 right-4 z-10">
+						<div className="absolute top-7 right-7 z-10">
 							<VideoPlayerControls
 								isPaused={isPaused}
 								onPlayPause={togglePlayPause}
 							/>
 						</div>
 						<video className="w-full" autoPlay ref={videoRef}>
-							<source
-								src={"/portfolio/luxeseasonsvid.mp4" || "/luxeseasonsvid.mp4"}
-							/>
+							<source src={videoURL} />
 						</video>
-						<div className="absolute bottom-4 right-5 z-10">
+						<div className="absolute bottom-7 right-7 z-10">
 							<FullScreenSVG
 								style={{
 									width: "2em",

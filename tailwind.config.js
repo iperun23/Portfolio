@@ -4,7 +4,6 @@ module.exports = {
 		"./app/**/*.{js,ts,jsx,tsx,mdx}",
 		"./pages/**/*.{js,ts,jsx,tsx,mdx}",
 		"./components/**/*.{js,ts,jsx,tsx,mdx}",
-
 		// Or if using `src` directory:
 		"./src/**/*.{js,ts,jsx,tsx,mdx}",
 	],
@@ -27,12 +26,26 @@ module.exports = {
 				accent: "#F13024",
 			},
 			backgroundImage: {
-				explosion:
-					'url("/portfolio/bg-explosion.png")' || 'url("/bg-explosion.png")',
-				circles: 'url("/portfolio/bg-circles.png")' || 'url("/bg-circles.png")',
-				circleStar:
-					'url("/portfolio/circle-star.svg")' || 'url("/circle-star.svg")',
-				site: 'url("/portfolio/cl-2.svg")' || 'url("/cl-2.svg")',
+				explosion: `url("${
+					process.env.NODE_ENV === "development"
+						? "/bg-explosion.png"
+						: "/portfolio/bg-explosion.png"
+				}")`,
+				circles: `url("${
+					process.env.NODE_ENV === "development"
+						? "/bg-circles.png"
+						: "/portfolio/bg-circles.png"
+				}")`,
+				circleStar: `url("${
+					process.env.NODE_ENV === "development"
+						? "/circle-star.svg"
+						: "/portfolio/circle-star.svg"
+				}")`,
+				site: `url("${
+					process.env.NODE_ENV === "development"
+						? "/cl-2.svg"
+						: "/portfolio/cl-2.svg"
+				}")`,
 			},
 			animation: {
 				"spin-slow": "spin 6s linear infinite",

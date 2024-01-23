@@ -91,6 +91,18 @@ const TempusUnlimited = () => {
 		}
 	};
 
+	// Use Next.js environment variable to check if it's in development
+	const isDevelopment = process.env.NODE_ENV === "development";
+
+	// Define video URLs based on the environment
+	const beforeVideoURL = isDevelopment
+		? "/before-vid.mp4"
+		: "/portfolio/before-vid.mp4";
+
+	const afterVideoURL = isDevelopment
+		? "/after-vid.mp4"
+		: "/portfolio/after-vid.mp4";
+
 	return (
 		<div className="h-full bg-primary/60 py-36 flex items-center">
 			<Circles />
@@ -150,9 +162,7 @@ const TempusUnlimited = () => {
 									/>
 								</div>
 								<video className="w-full" autoPlay ref={videoRef1}>
-									<source
-										src={"/portfolio/before-vid.mp4" || "/before-vid.mp4"}
-									/>
+									<source src={beforeVideoURL} />
 								</video>
 								<div className="absolute bottom-4 right-5 z-10">
 									<FullScreenSVG
@@ -174,9 +184,7 @@ const TempusUnlimited = () => {
 									/>
 								</div>
 								<video className="w-full" autoPlay ref={videoRef2}>
-									<source
-										src={"/portfolio/after-vid.mp4" && "/after-vid.mp4"}
-									/>
+									<source src={afterVideoURL} />
 								</video>
 								<div className="absolute bottom-4 right-5 z-10">
 									<FullScreenSVG
