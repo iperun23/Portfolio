@@ -104,7 +104,7 @@ const LuxeSeasons = () => {
 							/>
 						</div>
 						<video className="w-full" autoPlay ref={videoRef}>
-							<source src="/luxeseasonsvid.mp4" />
+							<source src="/portfolio//luxeseasonsvid.mp4" />
 						</video>
 						<div className="absolute bottom-4 right-5 z-10">
 							<FullScreenSVG
