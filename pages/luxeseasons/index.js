@@ -60,6 +60,28 @@ const LuxeSeasons = () => {
 		? "/luxeseasonsvid.mp4"
 		: "/portfolio/luxeseasonsvid.mp4";
 
+	const [isMobile, setIsMobile] = useState(false);
+
+	useEffect(() => {
+		// Check if window is defined (client side)
+		if (typeof window !== "undefined") {
+			// Set isMobile based on the window width
+			setIsMobile(window.innerWidth <= 600);
+
+			// Add event listener for window resize
+			const handleResize = () => {
+				setIsMobile(window.innerWidth <= 600);
+			};
+
+			window.addEventListener("resize", handleResize);
+
+			// Remove event listener on component unmount
+			return () => {
+				window.removeEventListener("resize", handleResize);
+			};
+		}
+	}, []); // Empty dependency array means this effect runs once on mount
+
 	return (
 		<div className="h-full bg-primary/60 py-36 flex items-center">
 			<Circles />
@@ -106,24 +128,30 @@ const LuxeSeasons = () => {
 						className="relative w-[90%] max-w-6xl my-8 rounded-xl overflow-hidden custom-box-shadow"
 					>
 						<div className="absolute top-7 right-7 z-10">
-							<VideoPlayerControls
-								isPaused={isPaused}
-								onPlayPause={togglePlayPause}
-							/>
+							{/* Conditionally render VideoPlayerControls based on isMobile state */}
+							{!isMobile && (
+								<VideoPlayerControls
+									isPaused={isPaused}
+									onPlayPause={togglePlayPause}
+								/>
+							)}
 						</div>
 						<video className="w-full" autoPlay ref={videoRef}>
 							<source src={videoURL} />
 						</video>
 						<div className="absolute bottom-7 right-7 z-10">
-							<FullScreenSVG
-								style={{
-									width: "2em",
-									height: "2em",
-									fill: "#000000",
-									cursor: "pointer",
-								}}
-								onClick={toggleFullScreen}
-							/>
+							{/* Conditionally render FullScreenSVG based on isMobile state */}
+							{!isMobile && (
+								<FullScreenSVG
+									style={{
+										width: "2em",
+										height: "2em",
+										fill: "#000000",
+										cursor: "pointer",
+									}}
+									onClick={toggleFullScreen}
+								/>
+							)}
 						</div>
 					</motion.div>
 				</div>

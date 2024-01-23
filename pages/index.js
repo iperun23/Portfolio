@@ -11,11 +11,11 @@ import Link from "next/link";
 
 const Home = () => {
 	return (
-		<div className="bg-primary/60 h-full">
+		<div className="bg-primary/60 h-full ">
 			<CirclesLeft />
 			{/* {text} */}
 			<div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
-				<div className="text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto">
+				<div className="text-center flex flex-col justify-center xl:pt-25 xl:text-left h-full container mx-auto md:pt-150 ">
 					<motion.h1
 						variants={fadeIn("down", 0.2)}
 						initial="hidden"
@@ -47,7 +47,7 @@ const Home = () => {
 						className="inline-block z-20"
 					>
 						<h3 className="h3 text-lg pb-1">Projects</h3>
-						<div className="flex items-center lg:justify-normal md:justify-center sm:justify-center">
+						<div className="flex items-center lg:justify-normal justify-center">
 							<Bs1Circle className="mr-2" />
 							<Link
 								className=" underline hover:text-red-500 transition-colors duration-300 ease-in-out"
@@ -56,7 +56,7 @@ const Home = () => {
 								Tempus Unlimited
 							</Link>
 						</div>
-						<div className="flex items-center lg:justify-normal md:justify-center sm:justify-center">
+						<div className="flex items-center lg:justify-normal md:justify-center justify-center">
 							<Bs2Circle className="mr-2" />
 							<Link
 								className="underline hover:text-red-500 transition-colors duration-300 ease-in-out"

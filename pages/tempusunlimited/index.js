@@ -103,6 +103,28 @@ const TempusUnlimited = () => {
 		? "/after-vid.mp4"
 		: "/portfolio/after-vid.mp4";
 
+	const [isMobile, setIsMobile] = useState(false);
+
+	useEffect(() => {
+		// Check if window is defined (client side)
+		if (typeof window !== "undefined") {
+			// Set isMobile based on the window width
+			setIsMobile(window.innerWidth <= 600);
+
+			// Add event listener for window resize
+			const handleResize = () => {
+				setIsMobile(window.innerWidth <= 600);
+			};
+
+			window.addEventListener("resize", handleResize);
+
+			// Remove event listener on component unmount
+			return () => {
+				window.removeEventListener("resize", handleResize);
+			};
+		}
+	}, []); // Empty dependency array means this effect runs once on mount
+
 	return (
 		<div className="h-full bg-primary/60 py-36 flex items-center">
 			<Circles />
@@ -149,53 +171,80 @@ const TempusUnlimited = () => {
 						exit="hidden"
 						className=""
 					>
-						<div className="grid grid-cols-2 gap-4">
+						<div
+							className={`grid grid-cols-2 gap-4 ${
+								isMobile ? "mobile-view" : ""
+							}`}
+						>
 							<h2 className="my-4 text-xl">Before</h2>
 							<h2 className="my-4 text-xl">After</h2>
 						</div>
 						<div className="grid grid-cols-2 gap-4">
-							<div class="bg-white p-2 relative w-full max-w-6xl mb-4 rounded-xl overflow-hidden custom-box-shadow">
+							{/* Render first video component */}
+							<div
+								class={`bg-white p-2 relative w-full max-w-6xl mb-4 rounded-xl overflow-hidden custom-box-shadow ${
+									isMobile ? "mobile-view" : ""
+								}`}
+							>
 								<div className="absolute top-4 right-4 z-10">
-									<VideoPlayerControls
-										isPaused={isPaused1}
-										onPlayPause={togglePlayPause1}
-									/>
+									{/* Conditionally render VideoPlayerControls based on isMobile state */}
+									{!isMobile && (
+										<VideoPlayerControls
+											isPaused={isPaused1}
+											onPlayPause={togglePlayPause1}
+										/>
+									)}
 								</div>
 								<video className="w-full" autoPlay ref={videoRef1}>
 									<source src={beforeVideoURL} />
 								</video>
 								<div className="absolute bottom-4 right-5 z-10">
-									<FullScreenSVG
-										style={{
-											width: "2em",
-											height: "2em",
-											fill: "#000000",
-											cursor: "pointer",
-										}}
-										onClick={toggleFullScreen1}
-									/>
+									{/* Conditionally render FullScreenSVG based on isMobile state */}
+									{!isMobile && (
+										<FullScreenSVG
+											style={{
+												width: "2em",
+												height: "2em",
+												fill: "#000000",
+												cursor: "pointer",
+											}}
+											onClick={toggleFullScreen1}
+										/>
+									)}
 								</div>
 							</div>
-							<div class="bg-white p-2 relative w-full max-w-6xl mb-4 rounded-xl overflow-hidden custom-box-shadow">
+
+							{/* Render second video component */}
+							<div
+								class={`bg-white p-2 relative w-full max-w-6xl mb-4 rounded-xl overflow-hidden custom-box-shadow ${
+									isMobile ? "mobile-view" : ""
+								}`}
+							>
 								<div className="absolute top-4 right-4 z-10">
-									<VideoPlayerControls
-										isPaused={isPaused2}
-										onPlayPause={togglePlayPause2}
-									/>
+									{/* Conditionally render VideoPlayerControls based on isMobile state */}
+									{!isMobile && (
+										<VideoPlayerControls
+											isPaused={isPaused2}
+											onPlayPause={togglePlayPause2}
+										/>
+									)}
 								</div>
 								<video className="w-full" autoPlay ref={videoRef2}>
 									<source src={afterVideoURL} />
 								</video>
 								<div className="absolute bottom-4 right-5 z-10">
-									<FullScreenSVG
-										style={{
-											width: "2em",
-											height: "2em",
-											fill: "#000000",
-											cursor: "pointer",
-										}}
-										onClick={toggleFullScreen2}
-									/>
+									{/* Conditionally render FullScreenSVG based on isMobile state */}
+									{!isMobile && (
+										<FullScreenSVG
+											style={{
+												width: "2em",
+												height: "2em",
+												fill: "#000000",
+												cursor: "pointer",
+											}}
+											onClick={toggleFullScreen2}
+										/>
+									)}
 								</div>
 							</div>
 						</div>
