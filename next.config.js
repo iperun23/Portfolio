@@ -3,7 +3,7 @@ const nextConfig = {
 	reactStrictMode: true,
 	swcMinify: true,
 	basePath: "/portfolio",
-	output: "export",
+	assetPrefix: "/portfolio/",
 	images: {
 		loader: "custom",
 		loaderFile: "./my-loader.ts",
