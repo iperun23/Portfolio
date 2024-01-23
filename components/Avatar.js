@@ -12,7 +12,7 @@ const Avatar = () => {
 			<Image
 				src={firstURL}
 				width={737}
-				height={678}
+				height={778}
 				alt=""
 				className="translate-z-0 w-full h-full"
 				onError={(e) => {
