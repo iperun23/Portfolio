@@ -82,8 +82,20 @@ const LuxeSeasons = () => {
 		}
 	}, []); // Empty dependency array means this effect runs once on mount
 
+	const videoElement = (
+		<video className="w-full" ref={videoRef} autoPlay>
+			<source src={videoURL} />
+		</video>
+	);
+
+	const mobileVideoElement = (
+		<video className="w-full" ref={videoRef}>
+			<source src={videoURL} />
+		</video>
+	);
+
 	return (
-		<div className="h-full bg-primary/60 py-36 flex items-center">
+		<div className="h-full bg-primary/60 lg:pt-36 lg:pb-36 flex items-center pb-36">
 			<Circles />
 			<CirclesLeft />
 			<div className=" container mx-auto">
@@ -136,9 +148,8 @@ const LuxeSeasons = () => {
 								/>
 							)}
 						</div>
-						<video className="w-full" autoPlay ref={videoRef}>
-							<source src={videoURL} />
-						</video>
+						{isMobile ? mobileVideoElement : videoElement}
+
 						<div className="absolute bottom-7 right-7 z-10">
 							{/* Conditionally render FullScreenSVG based on isMobile state */}
 							{!isMobile && (

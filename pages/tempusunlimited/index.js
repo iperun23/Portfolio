@@ -125,8 +125,32 @@ const TempusUnlimited = () => {
 		}
 	}, []); // Empty dependency array means this effect runs once on mount
 
+	const videoElementBefore = (
+		<video className="w-full" autoPlay ref={videoRef1}>
+			<source src={beforeVideoURL} />
+		</video>
+	);
+
+	const mobileVideoElementBefore = (
+		<video className="w-full" ref={videoRef1}>
+			<source src={beforeVideoURL} />
+		</video>
+	);
+
+	const videoElementAfter = (
+		<video className="w-full" autoPlay ref={videoRef2}>
+			<source src={afterVideoURL} />
+		</video>
+	);
+
+	const mobileVideoElementAfter = (
+		<video className="w-full" ref={videoRef2}>
+			<source src={afterVideoURL} />
+		</video>
+	);
+
 	return (
-		<div className="h-full bg-primary/60 py-36 flex items-center">
+		<div className="h-full bg-primary/60 lg:pt-36 lg:pb-36 pb-36 flex items-center">
 			<Circles />
 			<CirclesLeft />
 			<div className=" container mx-auto">
@@ -195,9 +219,8 @@ const TempusUnlimited = () => {
 										/>
 									)}
 								</div>
-								<video className="w-full" autoPlay ref={videoRef1}>
-									<source src={beforeVideoURL} />
-								</video>
+
+								{isMobile ? mobileVideoElementBefore : videoElementBefore}
 								<div className="absolute bottom-4 right-5 z-10">
 									{/* Conditionally render FullScreenSVG based on isMobile state */}
 									{!isMobile && (
@@ -229,9 +252,7 @@ const TempusUnlimited = () => {
 										/>
 									)}
 								</div>
-								<video className="w-full" autoPlay ref={videoRef2}>
-									<source src={afterVideoURL} />
-								</video>
+								{isMobile ? mobileVideoElementAfter : videoElementAfter}
 								<div className="absolute bottom-4 right-5 z-10">
 									{/* Conditionally render FullScreenSVG based on isMobile state */}
 									{!isMobile && (
