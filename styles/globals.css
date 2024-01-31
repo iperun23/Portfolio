@@ -20,9 +20,20 @@
 
 .custom-box-shadow {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
 
+.themed-component {
 
+}
 
+.red {
+  /* background-color: ; */
+  color: #f13024;
+}
+
+.blue {
+ 
+  color: #93E7FB;
 }
 
 @layer base {

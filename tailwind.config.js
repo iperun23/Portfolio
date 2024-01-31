@@ -31,6 +31,11 @@ module.exports = {
 						? "/bg-explosion.png"
 						: "/portfolio/bg-explosion.png"
 				}")`,
+				ice: `url("${
+					process.env.NODE_ENV === "development"
+						? "/bg-ice2v2.jpg"
+						: "/portfolio/bg-ice2v2.jpg"
+				}")`,
 				circles: `url("${
 					process.env.NODE_ENV === "development"
 						? "/bg-circles.png"

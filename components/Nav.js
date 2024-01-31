@@ -11,6 +11,7 @@ import {
 } from "react-icons/hi2";
 
 import { Bs1Circle, Bs2Circle } from "react-icons/bs";
+import { useTheme } from "./ThemeContext";
 
 // nav data
 export const navData = [
@@ -31,6 +32,7 @@ export const navData = [
 const Nav = () => {
 	const router = useRouter();
 	const pathname = router.pathname;
+	const { theme, toggleTheme } = useTheme();
 
 	return (
 		<nav className="flex fex-col items-center xl:justify-center gap-y-4 fixed h-max bottom-0 mt-auto xl:right-[2%] z-50 top-0 w-full xl:w-16 xl:max-w-md xl:h-screen ">
@@ -39,8 +41,8 @@ const Nav = () => {
 					return (
 						<Link
 							className={`${
-								link.path === pathname && "text-accent"
-							} relative flex items-center group hover:text-accent transition-all duration-300`}
+								link.path === pathname && theme
+							} relative flex items-center group hover:${theme} transition-all duration-300`}
 							key={index}
 							href={link.path}
 						>

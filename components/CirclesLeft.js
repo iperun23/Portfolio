@@ -1,12 +1,19 @@
 import Image from "next/image";
+import { useTheme } from "./ThemeContext";
 
 const CirclesLeft = () => {
 	const isDevelopment = process.env.NODE_ENV === "development";
 
 	// Define URLs based on the environment
 	let imageURL = isDevelopment ? "/circles.png" : "/portfolio/circles.png";
+
+	const { theme, toggleTheme } = useTheme();
 	return (
-		<div className="w-[400px] xl:w-[500px] absolute -left-8 -bottom-2 mix-blend-color-dodge animate-pulse duration-0 z-10 transform -scale-x-100">
+		<div
+			className={`${
+				theme === "red" ? "" : "hidden"
+			} w-[400px] xl:w-[500px] absolute -left-8 -bottom-2 mix-blend-color-dodge animate-pulse duration-0 z-10 transform -scale-x-100`}
+		>
 			<Image
 				src={imageURL}
 				width={260}

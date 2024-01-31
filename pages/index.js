@@ -8,13 +8,25 @@ import CirclesLeft from "../components/CirclesLeft";
 
 import { Bs1Circle, Bs2Circle } from "react-icons/bs";
 import Link from "next/link";
+import { useTheme } from "@/components/ThemeContext";
 
 const Home = () => {
+	const { theme, toggleTheme } = useTheme();
 	return (
-		<div className="bg-primary/60 h-full">
+		<div
+			className={`${
+				theme === "red" ? "bg-primary/60" : "bg-primary/20"
+			} h-full`}
+		>
 			<CirclesLeft />
 			{/* {text} */}
-			<div className="w-full h-full bg-gradient-to-r from-primary/30 via-black/30 to-black/10 pb-48 lg:pb-1">
+			<div
+				className={`${
+					theme === "red"
+						? "bg-gradient-to-r from-primary/30 via-black/30 to-black/10"
+						: "none"
+				} w-full h-full  pb-48 lg:pb-1`}
+			>
 				<div className="text-center flex flex-col justify-center xl:pt-25 xl:text-left h-full container mx-auto md:pt-150 ">
 					<motion.h1
 						variants={fadeIn("down", 0.2)}
@@ -24,7 +36,7 @@ const Home = () => {
 						className="h1"
 					>
 						Front End Developer <br />
-						<span className="text-accent text-center">Igor Perun</span>
+						<span className={` ${theme} text-center`}>Igor Perun</span>
 					</motion.h1>
 					{/* {subtitle} */}
 					<motion.p
@@ -50,7 +62,9 @@ const Home = () => {
 						<div className="flex items-center lg:justify-normal justify-center">
 							<Bs1Circle className="mr-2" />
 							<Link
-								className=" underline hover:text-red-500 transition-colors duration-300 ease-in-out"
+								className={`${
+									theme === "red" ? "hover:text-red-500" : "hover:text-blue-300"
+								} underline  transition-colors duration-300 ease-in-out`}
 								href="/tempusunlimited"
 							>
 								Tempus Unlimited
@@ -59,7 +73,9 @@ const Home = () => {
 						<div className="flex items-center lg:justify-normal md:justify-center justify-center">
 							<Bs2Circle className="mr-2" />
 							<Link
-								className="underline hover:text-red-500 transition-colors duration-300 ease-in-out"
+								className={`${
+									theme === "red" ? "hover:text-red-500" : "hover:text-blue-300"
+								} underline  transition-colors duration-300 ease-in-out`}
 								href="/luxeseasons"
 							>
 								LuxeSeasons
@@ -70,9 +86,17 @@ const Home = () => {
 				</div>
 			</div>
 			{/* {image} */}
-			<div className="w-[1525px] h-full absolute right-0 bottom-0">
+			<div
+				className={`${
+					theme === "red" ? "w-[1525px]" : "w-full"
+				} h-full absolute right-0 bottom-0`}
+			>
 				{/* bg image */}
-				<div className="bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0"></div>
+				<div
+					className={`${
+						theme === "red" ? "xl:bg-explosion" : "xl:none"
+					} bg-none  xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0 `}
+				></div>
 				{/* particles */}
 				<ParticlesContainer />
 				{/* avatar */}
@@ -82,7 +106,9 @@ const Home = () => {
 					animate="show"
 					exit="hidden"
 					transition={{ duration: 1, ease: easeInOut }}
-					className="w-full h-full max-w-[750px] max-h-[720px] absolute -bottom-32 lg:bottom-0 lg:right-[6%]"
+					className={`${
+						theme === "red" ? "lg:right-[6%]" : "lg:right-[4.75%]"
+					} w-full h-full max-w-[750px] max-h-[720px] absolute -bottom-32 lg:bottom-0 `}
 				>
 					<Avatar />
 				</motion.div>

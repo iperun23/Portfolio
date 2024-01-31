@@ -1,6 +1,7 @@
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
+import { useTheme } from "./ThemeContext";
 
 const ParticlesContainer = () => {
 	const particlesInit = useCallback(async (engine) => {
@@ -8,6 +9,8 @@ const ParticlesContainer = () => {
 	}, []);
 
 	const particlesLoaded = useCallback(async () => {}, []);
+
+	const { theme, toggleTheme } = useTheme();
 
 	return (
 		<Particles
@@ -51,10 +54,10 @@ const ParticlesContainer = () => {
 				},
 				particles: {
 					color: {
-						value: "#f13024",
+						value: theme === "red" ? "#f13024" : "#93E7FB",
 					},
 					move: {
-						direction: "top-right",
+						direction: theme === "red" ? "top-right" : "bottom",
 						enable: true,
 						outModes: {
 							default: "out",
