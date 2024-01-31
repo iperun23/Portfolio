@@ -102,7 +102,7 @@ const LuxeSeasons = () => {
 	);
 
 	return (
-		<div className="h-full bg-primary/60 lg:pt-36 lg:pb-36 flex items-center pt-6">
+		<div className="h-full bg-primary/60 lg:pt-36 lg:pb-36 flex items-center pt-60">
 			<Circles />
 			<CirclesLeft />
 			<div className=" container mx-auto">

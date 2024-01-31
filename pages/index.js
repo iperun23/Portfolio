@@ -27,7 +27,7 @@ const Home = () => {
 						: "none"
 				} w-full h-full  pb-48 lg:pb-1`}
 			>
-				<div className="text-center flex flex-col justify-center xl:pt-25 xl:text-left h-full container mx-auto md:pt-150 ">
+				<div className="text-center flex flex-col justify-center xl:pt-25 xl:text-left h-full container mx-auto md:pt-150 lg:pt-1 pt-40">
 					<motion.h1
 						variants={fadeIn("down", 0.2)}
 						initial="hidden"
