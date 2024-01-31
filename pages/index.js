@@ -15,7 +15,7 @@ const Home = () => {
 	return (
 		<div
 			className={`${
-				theme === "red" ? "bg-primary/60" : "bg-primary/20"
+				theme === "red" ? "lg:bg-primary/60 bg-primary " : "bg-primary/20"
 			} h-full`}
 		>
 			<CirclesLeft />
@@ -23,7 +23,7 @@ const Home = () => {
 			<div
 				className={`${
 					theme === "red"
-						? "bg-gradient-to-r from-primary/30 via-black/30 to-black/10"
+						? "bg-gradient-to-r from-primary/30 via-black/30 to-black/10 "
 						: "none"
 				} w-full h-full  pb-48 lg:pb-1`}
 			>

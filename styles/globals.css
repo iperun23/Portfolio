@@ -32,17 +32,16 @@
 }
 
 .blue {
- 
   color: #93E7FB;
 }
 
 @layer base {
   body {
-    @apply bg-secondary lg:overflow-hidden leading-relaxed overflow-y-auto;
+    @apply bg-secondary lg:overflow-hidden leading-relaxed overflow-x-hidden;
   }
 
   .page {
-    @apply w-full h-screen lg:overflow-hidden overflow-y-auto;
+    @apply w-full h-screen lg:overflow-hidden overflow-x-hidden;
   }
 
   .h1 {
