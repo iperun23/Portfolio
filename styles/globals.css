@@ -38,11 +38,11 @@
 
 @layer base {
   body {
-    @apply bg-secondary lg:overflow-hidden leading-relaxed overflow-auto;
+    @apply bg-secondary lg:overflow-hidden leading-relaxed overflow-y-auto;
   }
 
   .page {
-    @apply w-full h-screen lg:overflow-hidden  overflow-auto;
+    @apply w-full h-screen lg:overflow-hidden overflow-y-auto;
   }
 
   .h1 {

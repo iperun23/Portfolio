@@ -23,7 +23,9 @@ const Layout = ({ children }) => {
 			<div className="flex lg:justify-end absolute justify-center z-10 w-full right-[3%] top-[5%]">
 				<button
 					className={`${
-						theme === "red" ? "bg-blue-200 text-black" : "bg-red-400 text-black"
+						theme === "red"
+							? "lg:bg-blue-200 bg-blue-600 text-black"
+							: "lg:bg-red-400 bg-red-600 text-black"
 					} flex items-center gap-2 px-4 py-2  rounded-md  dark:bg-gray-800`}
 					onClick={toggleTheme}
 				>
